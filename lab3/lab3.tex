@@ -1,0 +1,123 @@
+\documentclass[a4paper, 12pt]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage[T2A]{fontenc} 
+\usepackage[english, russian]{babel}
+\usepackage[top = 20 mm, 
+            bottom = 20 mm, 
+            left = 30 mm, 
+            right = 30 mm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\begin{document}
+\begin{center}
+\noindent\textparagraph 5 \quad общие линейные уравнения гиперболического типа \hfill 137
+\end{center}
+позволяет привести уравнение (21) к более простому виду
+\newline\(U_{xx} - U_{yy} + c_1U =0\) , 
+\(c_1 = \frac{1}{4}\left(4c^2 - a^2 - b^2)\right\), 
+\(-\infty < x < \infty)\), 
+\(y > 0\) (25)
+\newlineс дополнительными условиями
+\begin{equation}
+    \label{eq:example}
+    U = \varphi(x) e^{\frac{a}{2}x} = \varphi_1(x), -\infty < x < \infty, \tag{22'}
+\end{equation}
+\begin{equation}
+    \label{eq:example}
+    U_{y|y=0} &= (\psi(x) - \frac{b}{2} \varphi(x)) e^{\frac{a}{2}x} = \psi_1(x), -\infty < x < \infty, \tag{23'}
+\end{equation}
+\newlineесли только выбрать параметры $\alpha$ и $\mu$ соответствующим образом,
+\newlineполагая
+\begin{equation}
+    \label{eq:example}
+    \alpha = \frac{a}{2}, \mu = -\frac{b}{2}. \tag{26}
+\end{equation}
+Определение функции U(x,y) по начальным данным и уравнению (25) сводится к построению функции Римана $\nu$(x,y; $\epsilon$, $\eta$).
+\begin{equation}
+    \label{eq:example}
+    \nu_xx - \nu_yy +c_1v\nu = 0, \tag{27}
+\end{equation}
+\begin{equation}
+    \label{eq:example}
+    \begin{cases}
+        \text{$\nu$ = 1 на характеристике MP,} \\
+        \text{$\nu$ = 1 на характеристике MQ (рис. 28).}
+    \end{cases}
+    \tag{28}
+\end{equation}
+Будем искать $\nu$ в виде 
+\begin{equation}
+    \label{eq:example}
+    \nu = \nu(z) \tag{29}
+\end{equation}
+где
+\begin{equation}
+    z = \sqrt{(x - \epsilon)^2 - (y - \nu)^2} \quad \text{или} \quad z^2 = (x - \epsilon)^2 - (y - \nu)^2. \tag {30}
+\end{equation}
+На характеристиках MP и MQ переменная z обращается в нуль, так что $\nu$(0)=1. Далее, левая часть уравнения (27) преобразуется следующим образом: \\
+$\nu$_xx - $\nu$_yy + c_1$\nu$ = $\nu$''(z)(z^2_x - z^2_y) + $\nu$'(z)(z_xx - z_yy) + c_1$\nu$ = 0. \\ 
+Дифференцируя выражение для $z^2$ дважды, по x и y, получим: \\
+\begin{equation*}
+    zz_x &= x - \epsilon,
+\end{equation*}
+\begin{equation*}
+    zz_y &= -(y - \eta),
+\end{equation*}
+\begin{equation*}
+    zz_{xx} + z_x^2 &= 1,
+\end{equation*}
+\begin{equation*}
+    zz_{yy} + z_y^2 &= -1.
+\end{equation*}
+Отсюда и из формулы (30) находим:
+\begin{equation*}
+    z_x^2 - z_y^2 = 1, \quad z_{xx} - z_{yy} = \frac{1}{z}.
+\end{equation*}
+Уравнение для $\nu$ принимает следующий вид:
+\begin{equation*}
+    \nu'' + \frac{1}{z}\nu\ + c_1\nu = 0
+\end{equation*}
+\begin{center}
+    \hfill 138 \quad общие линейные уравнения гиперболического типа \quad гл 1т \\
+\end{center}
+при условии $\nu$(0)=1. Решением этого уравнения является функция Бесселя нулевого порядка (см. Дополнение II, часть I, \noindent\textparagraph 1)
+\begin{equation*}
+    \nu(z)=J_0(\sqrt{c_1}z)
+\end{equation*}
+или
+\begin{equation}
+    \nu(x, y; \epsilon, \eta) = J_0(\sqrt{c_1[(x - \epsilon)^2 - (y - \eta)^2]}). \tag{31}
+\end{equation}
+Воспользуемся теперь для нахождения U(x,y) формулой (10), которая в нашем случае принимает вид
+\begin{equation}
+    U(M) = \frac{U(P) + U(Q)}{2} + \frac{1}{2}\int\limits_{P}^{Q}(\nu U_n d\epsilon - U\nu_\eta d\epsilon) \quad (d\eta = 0). \tag{32}
+\end{equation}
+Вычислим предварительно интеграл по отрезку PQ ($\eta$=0):
+\begin{equation}
+    \int\limits_{P}^{Q}(\nu U_\eta - U\nu_\eta)d\epsilon = \int\limits_{x - y}^{x + y}{J_0(\sqrt{c_1[(x - \epsilon)^2 - y^2]}U_\eta(\epsilon, 0) - \frac{U(\epsilon, 0)\sqrt{c_1}yJ_0'(\sqrt{c_1}\sqrt{(x-\epsilon)^2 - y^2)}}{\sqrt{c_1[(x-\epsilon)^2 - y^2]}}}d\epsilon. \tag{33}
+\end{equation}
+Пользуясь начальными условиями (22'), (23'), находим:
+\begin{equation*}
+    U(x,y) = \frac{\phi_1(x-y)+\phi_1(x+y)}{2}+\frac{1}{2}\int\limits_{x-y}^{x+y}J_0(\sqrt{c_1}\sqrt{(x-\epsilon)^2-y^2)}\psi_1(\epsilon)d\epsilon+
+\end{equation*}
+\begin{equation}
+    +\frac{1}{2}\sqrt{c_1}y\int\limits_{x-y}^{x+y}\frac{J_1(\sqrt{c_1}\sqrt{x-\epsilon)^2-y^2}\phi_1(\epsilon)d\epsilon}{\sqrt{(x-\epsilon)^2-y^2}}, \tag{34}
+\end{equation}
+откуда в силу (24), (22') и (23') получаем формулу
+\begin{equation*}
+    u(x,y)=\frac{\phi(x-y)e^{-\frac{a-b}{2}y}+\phi(x+y)c^{\frac{a+b}{2}y}}{2}-
+\end{equation*}
+\begin{equation*}
+    -\frac{1}{2}e^{\frac{b}{2}y}\int\limits_{x-y}^{x+y}{\frac{b}{2}J_0(\sqrt{c_1}\sqrt{(x-\epsilon)^2-y^2}-
+\end{equation*}
+\begin{equation*}
+    -\sqrt{c_1}y\frac{J_1(\sqrt{c_1}\sqrt{(x-\epsilon)^2-y^2})}{\sqrt{(x-\epsilon)^2-y^2}}}e^{-\frac{a}{2}(x-\epsilon)}\phi(\epsilon)d\epsilon+
+\end{equation*}
+\begin{equation}
+    +\frac{1}{2}e^{\frac{b}{2}y}\int\limits_{x-y}^{x+y}J_0(\sqrt{c_1}\sqrt{(x-\epsilon)^2-y^2})e^{-\frac{a}{2}(x-\epsilon)}\psi(\epsilon)d\epsilon, \tag{35}
+\end{equation}
+дающую решение поставленной задачи.
+\end{document}
